@@ -21,10 +21,10 @@ def check_unicode(contents, contents_name="This"):
 
 if __name__ == '__main__':
     for i in argv[1:]:
-        contents = swallow_file(argv[i])
-        encoding = check_unicode(contents, argv[i])
+        contents = swallow_file(i)
+        encoding = check_unicode(contents, i)
         if encoding != 'utf-8':
             recoded = convert_to_Unicode(contents, encoding)
             check_unicode(recoded)
-            new_name = splitext(argv[i])[0] + '_U' + splitext(argv[i])[1]
+            new_name = splitext(i)[0] + '_U' + splitext(i)[1]
             dump_in_file(new_name, recoded, byte_text=True)

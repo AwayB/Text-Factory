@@ -1,3 +1,6 @@
 *.pyc
-__pycache
+__pycache*
 !*.py
+build
+dist
+TF.egg-info
