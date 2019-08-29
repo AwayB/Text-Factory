@@ -5,7 +5,7 @@ from FSGate import are_files_in, dump_in_file
 
 #Some XML values rely on an attribute rather than a tag. They are in this dictionary of lists.
 #Key=Attribute, Value=List of tags that require this attribute. Modify it at will.
-attribute_dependent={'name':('Identification','Role'),'type':('Organization', 'Address')}
+attribute_dependent={'name':('Id','Role'),'type':('Orga', 'Address')}
 
 def concatenate_standard_xml(template_root, values_root):
     """Will concatenate an XML from a template and values.

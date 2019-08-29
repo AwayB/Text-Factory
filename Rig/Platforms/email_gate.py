@@ -5,7 +5,7 @@ import os
 from email.policy import default
 from imaplib import IMAP4_SSL
 import getpass
-from FSGate import dump_in_file
+from filesystem_gate import dump_in_file
 import html
 import html.parser
 import bs4

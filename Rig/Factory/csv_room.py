@@ -1,7 +1,10 @@
 import psv
 import sys
-from unicode_checker import check_unicode
-from FSGate import swallow_file
+from importlib import import_module
+
+import_module(name='unicode_checker' ,package='..Engine')
+import_module(name='FSGate' ,package='..Hold')
+
 
 def useless_column(api, column_name):
     "Checks if the CSV column has a set length of 0."
@@ -31,7 +34,7 @@ def list_of_CSV_fields(api):
 def parse_CSV(csv_file):
     "Parses a CSV."
     api = psv.load(csv_file, encoding='utf_8')
-    if check_unicode(swallow_file(csv_file), csv_file) != 'utf-8' : return
+    if unicode_checker.check_unicode(swallow_file(csv_file), csv_file) != 'utf-8' : return
     list_of_CSV_fields(api)
 
 if __name__ == '__main__':

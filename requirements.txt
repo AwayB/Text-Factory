@@ -1,0 +1,8 @@
+lxml
+requests
+psv
+chardet
+email
+beautifulsoup4
+keyring
+keyrings.cryptfile

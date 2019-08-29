@@ -1,6 +1,9 @@
-import re
-from FSGate import swallow_file, dump_in_file
+from os import getcwd
 import sys
+sys.path.append('C:\\Users\\aweber\\Downloads\\Text-Factory')
+print(sys.path)
+import re
+from Rig.Hold.filesystem_gate import swallow_file, dump_in_file
 
 
 def correct(file):
