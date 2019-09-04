@@ -26,18 +26,20 @@ def is_file_in(folder, filename, dealbreaker=True):
 
 
 ###########################Searchers###########################
-def find(target_file, source_folder=swd, recursive=True, multiple=False):
-    'Finds the file/folder inside source_folder. If multiple == true, will return all files/folders matching the name.'
+def find(target_file, source_folder=None, recursive=True, multiple=False):
+    'Finds the file/folder inside source_folder. if multiple == true, will return all files/folders matching the name.'
     if source_folder == None:
         source_folder = swd
-    if recursive == True and multiple == False:
-        walk(source_folder)
-    elif recursive == False and multiple == True:
-        pass
-    elif recursive == True and multiple == True:
-        pass
-    elif recursive == False and multiple == False:
-        pass
+    if recursive and multiple == True:
+        return [join(folder, name) for folder, name in walk(source_folder)[1:] if name == target_file]
+    elif recursive == True and multiple == False:
+        for folder, name in walk(source_folder)[1:]:
+             if name == target_file:
+                return (join(folder,name))
+    else:
+        if path.exists(join(source_folder, target_file)):
+            return join(source_folder, target_file)
+    pass
 
 
 ###########################Readers###########################

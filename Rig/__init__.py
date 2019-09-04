@@ -1,2 +1,2 @@
-__package__="therig"
-__all__=("Chambre","Control","Engine","Factory","Hold","Lobby","Platforms","Reactor")
+__package__="TheRig"
+__all__=("Assembly", "Atelier", "Chambre", "Control", "Cranes", "Engine", "Hold", "Lobby", "Platforms", "Reactor", "Workers")
