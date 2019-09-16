@@ -7,7 +7,7 @@ swd = getcwd() #starting working directory
 
 ###########################Checkers###########################
 
-def are_files_in(folder, files, dealbreaker=True):
+def are_files_in(folder, files, dealbreaker=False):
     "In a folder, will check if the given files exist. Returns a list of absentees."
     absentees = []
     for filename in files:
@@ -15,7 +15,7 @@ def are_files_in(folder, files, dealbreaker=True):
             absentees.append(path.join(folder, filename))
     return(absentees)
 
-def is_file_in(folder, filename, dealbreaker=True):
+def is_file_in(folder, filename, dealbreaker=False):
     "In a folder, will check if the given file exists. If an absent file is a dealbreaker, aborts the program."
     if not (path.isfile(path.join(folder, filename))):
         if dealbreaker == True:
@@ -27,13 +27,13 @@ def is_file_in(folder, filename, dealbreaker=True):
 
 ###########################Searchers###########################
 def find(target_file, source_folder=None, recursive=True, multiple=False):
-    'Finds the file/folder inside source_folder. if multiple == true, will return all files/folders matching the name.'
+    'Finds the file or files in source_folder.'
     if source_folder == None:
         source_folder = swd
     if recursive and multiple == True:
-        return [join(folder, name) for folder, name in walk(source_folder)[1:] if name == target_file]
+        return [join(folder, name) for folder, _, name in walk(source_folder) if name == target_file]
     elif recursive == True and multiple == False:
-        for folder, name in walk(source_folder)[1:]:
+        for folder, _, name in walk(source_folder):
              if name == target_file:
                 return (join(folder,name))
     else:

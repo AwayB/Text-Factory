@@ -6,3 +6,4 @@ email
 beautifulsoup4
 keyring
 keyrings.cryptfile
+readline

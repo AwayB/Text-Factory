@@ -1,4 +1,8 @@
 import os
+import site
+[site.addsitedir(dirs) for dirs, _, _ in os.walk('.') if str(dirs).split(os.path.sep)[-1][0] != '.' and '.git' not in dirs and '__pyc' not in dirs]
+
+
 def include(package):
     """It's a goddamned hacky, ugly, but at least EXISTING relative import.
     
@@ -12,8 +16,3 @@ def include(package):
     module = __import__(package.split('.')[-1])
     os.chdir(goback)
     return module
-
-
-def status(func):
-    def current(**kwargs):
-        pass
