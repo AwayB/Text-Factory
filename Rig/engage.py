@@ -36,15 +36,25 @@ class Cmdline(Cmd):
         autocomplete_contents = swallow_file(self.completion_file)
         return(list([line for line in autocomplete_contents.split('\n')]))
 
-    def nope(self):
-        print("Nope, never heard of that. Sorry.")
+    def default(self, line):
+        print("'"+ line +"'?", "Don't know that command, sorry.")
+        
+    def do_parse(self, line):
+        print('parsing', line)
+        
+    def do_EOF(self, line):
+        return True
         
     def std_loop(self):
         self.intro="Hello, what should I build?"
         self.completion_matches = list()
         self.completion_matches.append('mat')
-        self.default="nope"
         self.prompt="Idle. ->"
         self.cmdloop()
-cmd = Cmdline()
-cmd.std_loop()
+        
+def engage():
+    cmd = Cmdline()
+    cmd.std_loop()
+
+if __name__ == '__main__':
+    engage()

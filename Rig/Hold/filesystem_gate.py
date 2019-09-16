@@ -9,10 +9,7 @@ swd = getcwd() #starting working directory
 
 def are_files_in(folder, files, dealbreaker=False):
     "In a folder, will check if the given files exist. Returns a list of absentees."
-    absentees = []
-    for filename in files:
-        if is_file_in(folder, filename, dealbreaker) == False:
-            absentees.append(path.join(folder, filename))
+    absentees = [filename for filename in files if not is_file_in(folder, filename, dealbreaker)]
     return(absentees)
 
 def is_file_in(folder, filename, dealbreaker=False):
