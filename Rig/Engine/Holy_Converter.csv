@@ -1,0 +1,12 @@
+RIG  ,DESCRIPTION              ,PYTHON,UNIX ,REGEX,SQL ,HTML ,XML ,JSON ,SQL ,CSV ,XLSX ,MICROSOFT, TENSORFLOW
+Init,Status at the Rig's start,__main__,zsh(because quality)
+Master,The Rig's master job target value,master,$@
+Grab ,Select a value, value, $value
+Load ,Load the value as Master,master = return(value),master = $value
+Find x,Search in value,x in value, if [[ $x == *"value"* ]]; then ,
+Get x,Retrieve value, new_value = x, new_value = $(x)
+Post, Send value(Web Exclusive), POST(value), N/A
+Dump ,Return the master value, return(master), echo master >> file
+Foreach, For each in value, for x in (value):, for i in *
+Replace, Replace value, value = , value = $new_value
+As ,Alias a value's name, as, alias
