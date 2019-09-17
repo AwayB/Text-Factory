@@ -1,0 +1,21 @@
+RIG     ,DESCRIPTION                               ,PYTHON                 ,UNIX                   ,REGEX    ,SQL  ,HTML  ,XML                     ,JSON  ,CSV  ,XLSX  ,MICROSOFT , TENSORFLOW
+CAST    ,Automated conversions override with casts ,N/A                    ,sh.                    ,r.       ,sql. ,html. ,xml.                    ,json. ,csv. ,xlsx. ,ms.       , tf.
+Init    ,Status at the Rig's start                 ,__main__               ,zsh(because quality)   ,= re.()  ,N/A  ,N/A   ,lxml.etree              ,N/A   ,N/A  ,N/A   ,N/A       , N/A
+Master  ,The Rig master job's target value         ,master                 ,$@                     ,N/A      ,N/A  ,N/A   ,Element(tag attributes) ,N/A   ,N/A  ,N/A   ,N/A       , N/A
+For     ,For loop entry                            ,for                    ,N/A                    ,N/A      ,N/A  ,N/A   ,N/A                     ,N/A   ,N/A  ,N/A   ,N/A       , N/A
+In      ,Inside an iterable                        ,in                     ,N/A                    ,N/A      ,N/A  ,N/A   ,N/A                     ,N/A   ,N/A  ,N/A   ,N/A       , N/A
+With    ,Within a boundary                         ,with                   ,N/A                    ,N/A      ,N/A  ,N/A   ,N/A                     ,N/A   ,N/A  ,N/A   ,N/A       , N/A
+Sizeof  ,length of a list or size of an object     ,len()                  ,N/A                    ,N/A      ,N/A  ,N/A   ,N/A                     ,N/A   ,N/A  ,N/A   ,N/A       , N/A
+Grab    ,Select a value                            ,value                  ,$value                 ,N/A      ,N/A  ,N/A   ,Element[x]              ,N/A   ,N/A  ,N/A   ,N/A       , N/A
+Load    ,Load the value as Master                  ,master = return(value) ,master = $value        ,N/A      ,N/A  ,N/A   ,Element.SubElement()    ,N/A   ,N/A  ,N/A   ,N/A       , N/A
+Find x  ,Search in value                           ,x in value             ,if [[ $x == *value* ]] ,search() ,N/A  ,N/A   ,Element.search()        ,N/A   ,N/A  ,N/A   ,N/A       , N/A
+Get x   ,Retrieve value                            ,new_value = x          ,new_value = $(x)       ,N/A      ,N/A  ,GET   ,GET                     ,GET   ,N/A  ,N/A   ,N/A       , N/A
+Post    ,Send value(Web Exclusive)                 ,POST(value)            ,N/A                    ,N/A      ,N/A  ,POST  ,POST                    ,POST  ,N/A  ,N/A   ,N/A       , N/A
+Dump    ,Return the master value                   ,return(master)         ,echo master >> file    ,N/A      ,N/A  ,N/A   ,etree.tostring()        ,N/A   ,N/A  ,N/A   ,N/A       , N/A
+Foreach ,For each in value                         ,for x in (value):      ,for i in *             ,N/A      ,N/A  ,N/A   ,etree.iter()            ,N/A   ,N/A  ,N/A   ,N/A       , N/A
+Replace ,Replace value                             ,value =                ,value = $new_value     ,N/A      ,N/A  ,N/A   ,Element.replace()       ,N/A   ,N/A  ,N/A   ,N/A       , N/A
+Append , Append value, list.append(value),N/A                  ,N/A      ,N/A  ,N/A   ,Element.append()                     ,N/A   ,N/A  ,N/A   ,N/A       , N/A
+Extend , Append value, list.extend(value),N/A                  ,N/A      ,N/A  ,N/A   ,Element.extend()                     ,N/A   ,N/A  ,N/A   ,N/A       , N/A
+Insert, Insert value into , list.insert(value),N/A                  ,N/A      ,N/A  ,N/A   ,Element.insert()                     ,N/A   ,N/A  ,N/A   ,N/A       , N/A
+At, Position in iterable, list[at]
+As      ,Alias a value's name                      ,as
