@@ -1,0 +1,18 @@
+RIG_FLAGS ,DESCRIPTION                      , EXAMPLES
+For       ,For loop entry                   , for
+In        ,Inside an iterable               , in
+With      ,Within a boundary                , with
+Sizeof    ,list len or object size          , sizeof(file) == 50Kb sizeof(list) == 500 entries
+All       ,Extends x to all possible x      , in (a/b/a) print All(a) == a a
+Any       ,Extends x to any possible x      , in (a/b/a) print Any(a) == a
+Values    ,Rejects keys                     , Dump Values{a: Arthur ; b: Benoît} to File -> cat File == Arthur Benoît
+And       ,Passes master on                 , Get http://website and find all .png within and dump them to folder.
+Then      ,Stores master                    , Get http://website and dump to file then find all text in it and replace it with regex()
+It        ,Formerly stored master           , Get http://website then print text in it
+Save      ,Records query with empty values  , Get x and find all y within and dump them to z.
+Record    ,Records full query               , Get http://website and find all .png within and dump them to folder.
+To        ,Data target for dumping/posting  , Get file and find all Thomas within and post them to http://website.
+At        ,Position in iterable             , list[at]
+As        ,Alias a value's name             , as
+nocase    ,Ignore case                      , all text will be in minuscule
+Dot       ,Verbose flag at the end of query , Parser will run in verbose mode 
