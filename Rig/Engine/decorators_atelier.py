@@ -1,3 +1,6 @@
+from utils import contents
+
 def status(func):
     def current(**kwargs):
-        pass
+        contents(func.__dict__)
+        return(func.__dict__)

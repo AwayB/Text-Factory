@@ -4,16 +4,17 @@ import sys
 from platform import platform
 from Hold.filesystem_gate import swallow_file, append_to_file, dump_in_file, are_files_in, is_file_in
 
+try:
+    import readline
+except ImportError:
+    import pyreadline as readline
+
 class Cmdline(Cmd):
     history_file = "command_history.txt"
     completion_file = "autocomplete.txt"
     
     def __init__(self):
         super().__init__()
-        if platform.__name__ == "Linux":
-            self.rl = getattr(__import__('readline'))
-        else:
-            pass
         if (is_file_in(os.getcwd(), self.history_file, False)):
             self.history = self.recover_history()
         if (is_file_in(os.getcwd(), self.completion_file, False)):

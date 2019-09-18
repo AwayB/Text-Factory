@@ -1,17 +1,18 @@
-RIG     ,DESCRIPTION                          ,PYTHON                 ,UNIX                   ,REGEX      ,SQL  ,HTML  ,XML                     ,JSON  ,CSV  ,XLSX  ,MICROSOFT , TENSORFLOW
-CAST    ,Automated conversions override casts ,N/A                    ,sh.                    ,r.         ,sql. ,html. ,xml.                    ,json. ,csv. ,xlsx. ,ms.       , tf.
-Init    ,Status at the Rig's start            ,__main__               ,zsh(because quality)   ,compile()  ,N/A  ,N/A   ,lxml.etree              ,N/A   ,N/A  ,N/A   ,N/A       , N/A
-Master  ,master job's target value            ,master                 ,$@                     ,re(master) ,N/A  ,N/A   ,Element(tag attributes) ,N/A   ,N/A  ,N/A   ,N/A       , N/A
-Grab    ,Select a value                       ,value                  ,$value                 ,           ,N/A  ,N/A   ,Element[x]              ,N/A   ,N/A  ,N/A   ,N/A       , N/A
-Load    ,Load the value as Master             ,master = return(value) ,master = $value        ,N/A        ,N/A  ,N/A   ,Element.SubElement()    ,N/A   ,N/A  ,N/A   ,N/A       , N/A
-Find x  ,Search in value                      ,x in value             ,if [[ $x == *value* ]] ,search()   ,N/A  ,N/A   ,Element.search()        ,N/A   ,N/A  ,N/A   ,N/A       , N/A
-Get x   ,Retrieve value                       ,new_value = x          ,new_value = $(x)       ,N/A        ,N/A  ,GET   ,GET                     ,GET   ,N/A  ,N/A   ,N/A       , N/A
-Post    ,Send value(Web Exclusive)            ,POST(value)            ,N/A                    ,N/A        ,N/A  ,POST  ,POST                    ,POST  ,N/A  ,N/A   ,N/A       , N/A
-Send    ,Send value(NAS/SSH/Distant system)   ,ssh(value)             ,N/A                    ,N/A        ,N/A  ,N/A   ,N/A                     ,POST  ,N/A  ,N/A   ,N/A       , N/A
-Dump    ,Return the master value              ,return(master)         ,echo master >> file    ,N/A        ,N/A  ,N/A   ,etree.tostring()        ,N/A   ,N/A  ,N/A   ,N/A       , N/A
-Foreach ,For each in value                    ,for x in (value):      ,for i in *             ,N/A        ,N/A  ,N/A   ,etree.iter()            ,N/A   ,N/A  ,N/A   ,N/A       , N/A
-Replace ,Replace value                        ,value =                ,value = $new_value     ,N/A        ,N/A  ,N/A   ,Element.replace()       ,N/A   ,N/A  ,N/A   ,N/A       , N/A
-Append  ,Append value                         ,list.append(value)     ,N/A                    ,N/A        ,N/A  ,N/A   ,Element.append()        ,N/A   ,N/A  ,N/A   ,N/A       , N/A
-Extend  ,Append value                         ,list.extend(value)     ,N/A                    ,N/A        ,N/A  ,N/A   ,Element.extend()        ,N/A   ,N/A  ,N/A   ,N/A       , N/A
-Insert  ,Insert value into                    ,list.insert(value)     ,N/A                    ,N/A        ,N/A  ,N/A   ,Element.insert()        ,N/A   ,N/A  ,N/A   ,N/A       , N/A
-Pattern ,Create Text Pattern                  ,N/A                    ,N/A                    ,N/A        ,N/A  ,N/A   ,N/A                     ,N/A   ,N/A  ,N/A   ,N/A       , N/A
+"RIG     ","DESCRIPTION                          ","PYTHON                 ","UNIX                   ","REGEX              ","SQL  ","HTML  ","XML                     ","JSON  ","CSV  ","XLSX  ","MICROSOFT ",TENSORFLOW
+"CAST    ","Automated conversions override casts ","N/A                    ","sh.                    ","r.                 ","sql. ","html. ","xml.                    ","json. ","csv. ","xlsx. ","ms.       ",tf.
+"Init    ","Status at the Rig's start            ","__main__               ","zsh(because quality)   ","compile()          ","N/A  ","HTMLParser()   ","lxml.etree              ","N/A   ","N/A  ","N/A   ","N/A       ",N/A
+"Master  ","master job's target value            ","master                 ","$@                     ","re(master)         ","N/A  ","feed()   ","Element(tag attributes) ","N/A   ","N/A  ","N/A   ","N/A       ",N/A
+"Grab    ","Select a value                       ","value                  ","$value                 ","compile()          ","N/A  ",get_starttag_text(),"Element[x]              ","N/A   ","N/A  ","N/A   ","N/A       ",N/A
+"Load    ","Load the value as Master             ","master = return(value) ","master = $value        ","master = compile() ","N/A  ",master = feed(),"Element.SubElement()    ","N/A   ","N/A  ","N/A   ","N/A       ",N/A
+"Find x  ","Search in value                      ","x in value             ","if [[ $x == *value* ]] ","search()           ","N/A  ",N/A,"Element.search()        ","N/A   ","N/A  ","N/A   ","N/A       ",N/A
+"Get x   ","Retrieve value                       ","new_value = x          ","new_value = $(x)       ","N/A                ","N/A  ","GET   ","GET                     ","GET   ","N/A  ","N/A   ","N/A       ",N/A
+"Post    ","Send value(Web Exclusive)            ","POST(value)            ","N/A                    ","N/A                ","N/A  ","POST  ","POST                    ","POST  ","N/A  ","N/A   ","N/A       ",N/A
+"Send    ","Send value(NAS/SSH/Distant system)   ","ssh(value)             ","N/A                    ","N/A                ","N/A  ",N/A,"N/A                     ",N/A,"N/A  ","N/A   ","N/A       ",N/A
+"Dump    ","Return the master value              ","return(master)         ","echo master >> file    ","N/A                ","N/A  ","N/A   ","etree.tostring()        ","N/A   ","N/A  ","N/A   ","N/A       ",N/A
+"Foreach ","For each in value                    ","for x in (value):      ","for i in *             ","N/A                ","N/A  ","N/A   ","etree.iter()            ","N/A   ","N/A  ","N/A   ","N/A       ",N/A
+"Replace ","Replace value                        ","value =                ","value = $new_value     ","N/A                ","N/A  ","N/A   ","Element.replace()       ","N/A   ","N/A  ","N/A   ","N/A       ",N/A
+"Remove  ","Remove value                         ","del                    ","N/A                    ","N/A                ","N/A  ","N/A   ","Element.remove()        ","N/A   ","N/A  ","N/A   ","N/A       ",N/A
+"Append  ","Append value                         ","list.append(value)     ","N/A                    ","N/A                ","N/A  ","N/A   ","Element.append()        ","N/A   ","N/A  ","N/A   ","N/A       ",N/A
+"Extend  ","Append value                         ","list.extend(value)     ","N/A                    ","N/A                ","N/A  ","N/A   ","Element.extend()        ","N/A   ","N/A  ","N/A   ","N/A       ",N/A
+"Insert  ","Insert value into                    ","list.insert(value)     ","N/A                    ","N/A                ","N/A  ","N/A   ","Element.insert()        ","N/A   ","N/A  ","N/A   ","N/A       ",N/A
+"Pattern ","Create Text Pattern                  ","N/A                    ","N/A                    ","compile()          ","N/A  ","N/A   ","N/A                     ","N/A   ","N/A  ","N/A   ","N/A       ",N/A
