@@ -19,7 +19,7 @@ class Master():
         "Master becomes value."
         master = value
 
-    @multiple
+    #@multiple
     def Find(self, value, target=master):
         "Finds value inside Master."
         for value in self.master:
